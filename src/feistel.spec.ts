@@ -4,40 +4,12 @@ import { sha256 } from '@noble/hashes/sha256'
 import { sha1 } from '@noble/hashes/sha1'
 import { ripemd160 } from '@noble/hashes/ripemd160'
 import { decrypt, encrypt } from './feistel'
-import { randomBytes, randomInt } from 'node:crypto'
+import { randomInt } from 'node:crypto'
 import { expect } from 'chai'
 import { RoundFn } from './lib/RoundFn'
-
-function indicesList(len: number) {
-    return Array(len)
-        .fill(0)
-        .map((_, x) => BigInt(x))
-}
-
-function randomSeed() {
-    const seed_ = randomBytes(32) // 256b = 64b*4
-    let seed = 0n
-    for (let i = 0n; i < 4n; i++) {
-        seed |= seed_.readBigUint64LE() << (i * 64n)
-    }
-    return seed
-}
-
-function bigLEToU8(x: bigint, bits: number): Uint8Array {
-    const byteLength = Math.ceil(bits / 8)
-    const out = new Uint8Array(byteLength)
-    for (let i = 0; i < byteLength; i++) {
-        out[i] = Number((x >> BigInt(i * 8)) & 0xffn)
-    }
-    return out
-}
-
-function u8ToBigLE(buf: Uint8Array): bigint {
-    const hex = Array.from(buf)
-        .map((v) => v.toString(16).padStart(2, '0'))
-        .join('')
-    return BigInt('0x' + hex)
-}
+import { bigLEToU8, u8ToBigLE } from './lib/uint'
+import { indicesList } from './lib/indicesList'
+import { randomSeed } from './lib/randomSeed'
 
 const roundFns: { name: string; f: RoundFn }[] = [
     {
@@ -116,7 +88,7 @@ describe('Generalised Feistel Cipher', () => {
                     const X = indicesList(randomInt(MIN_DOMAIN, MAX_DOMAIN))
                     const domain = BigInt(X.length)
                     const seed = randomSeed()
-                    const rounds = 4n
+                    const rounds = BigInt(randomInt(2, 6) * 2)
                     const roundFn = f
                     it(`[${i}]\tdomain=${domain}\tseed=0x${seed
                         .toString(16)

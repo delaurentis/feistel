@@ -1,14 +1,23 @@
 {
-  "name": "gfc-fpe",
+  "name": "@kevincharm/gfc-fpe",
   "version": "1.0.0",
   "description": "Implementation of a generalised Feistel cipher.",
+  "main": "dist/feistel.js",
+  "types": "dist/feistel.d.ts",
+  "files": ["package.json", "dist", "LICENSE", "README.md"],
   "scripts": {
+    "build": "tsc",
+    "plot": "yarn run ts-node src/scripts/plot.ts",
     "test": "yarn run mocha --require ts-node/register src/**/*.spec.ts"
   },
-  "keywords": [],
+  "keywords": ["feistel", "cipher", "shuffle", "gfc", "fpe", "cryptography"],
   "author": "kevincharm <lucky@ape.engineer>",
-  "license": "UNLICENSED",
+  "license": "WTFPL",
   "devDependencies": {
+    "@nestjs/common": "8",
+    "@nestjs/core": "8",
+    "@nestjs/serve-static": "2",
+    "@nestjs/websockets": "8",
     "@noble/hashes": "^1.3.0",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
@@ -25,8 +34,12 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
     "mocha": "^10.2.0",
+    "nodeplotlib": "^1.1.2",
     "prettier": "^2.3.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7",
     "ts-node": "^10.1.0",
+    "tslib": "2",
     "typescript": "^4.5.2"
   }
 }
