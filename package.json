@@ -1,16 +1,28 @@
 {
   "name": "@kevincharm/gfc-fpe",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Implementation of a generalised Feistel cipher.",
   "main": "dist/feistel.js",
   "types": "dist/feistel.d.ts",
-  "files": ["package.json", "dist", "LICENSE", "README.md"],
+  "files": [
+    "package.json",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "plot": "yarn run ts-node src/scripts/plot.ts",
     "test": "yarn run mocha --require ts-node/register src/**/*.spec.ts"
   },
-  "keywords": ["feistel", "cipher", "shuffle", "gfc", "fpe", "cryptography"],
+  "keywords": [
+    "feistel",
+    "cipher",
+    "shuffle",
+    "gfc",
+    "fpe",
+    "cryptography"
+  ],
   "author": "kevincharm <lucky@ape.engineer>",
   "license": "WTFPL",
   "devDependencies": {
