@@ -1,4 +1,4 @@
-import assert from 'assert'
+import assert from './lib/assert'
 import { RoundFn } from './lib/RoundFn'
 import { usqrt, nextPerfectSquare } from './lib/math'
 
