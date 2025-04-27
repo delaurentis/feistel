@@ -1,7 +1,5 @@
 # Feistel Shuffle (GFC-FPE)
 
-![Welcome to the crypto casino](https://user-images.githubusercontent.com/10385659/235708675-d264838a-b1fb-4084-8cbe-3b0abd6013f0.png)
-
 A generalised Feistel cipher that implements format-preserving encryption, bijectively mapping $X \rightarrow X$ with pseudorandom permutation $\pi^{S}$ determined by a random seed $S$. This algorithm was originally proposed by Black & Rogaway [1].
 
 ## Iteration Bounds
