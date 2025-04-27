@@ -24,7 +24,7 @@ With an input domain $D$, the round function $f_i$ should output unique keys $K_
 
 ## Feistel Rounds
 
-For sufficient entropy (and generating numbers that feel random from consecutiove integers), I recommend using 32 rounds of fiestel.
+For sufficient entropy (and generating numbers that feel random from consecutive integers), I recommend using 32 rounds of fiestel.
 
 ## Randomness of Permutations
 
