@@ -1,6 +1,6 @@
-# Feistel Shuffle (GFC-FPE)
+# Feistel Shuffle (feistel-ts)
 
-A generalised Feistel cipher that implements format-preserving encryption, bijectively mapping $X \rightarrow X$ with pseudorandom permutation $\pi^{S}$ determined by a random seed $S$. This algorithm was originally proposed by Black & Rogaway [1].
+A generalised Feistel cipher writtein in TypeScript that implements format-preserving encryption, bijectively mapping $X \rightarrow X$ with pseudorandom permutation $\pi^{S}$ determined by a random seed $S$. This algorithm was originally proposed by Black & Rogaway [1].
 
 ## Iteration Bounds
 
@@ -24,7 +24,9 @@ With an input domain $D$, the round function $f_i$ should output unique keys $K_
 
 ## Feistel Rounds
 
-For sufficient entropy (and generating numbers that feel random from consecutive integers), I recommend using 32 rounds of fiestel.
+For sufficient entropy (and generating numbers that feel random from consecutive integers), I recommend using 32 rounds of fiestel.  
+
+At 32 rounds, performance testing on a MacBook Pro M4 shows 2 microseconds per encryption / decryption.  Even an order of magnitude slower would be sufficient for most purposes.
 
 ## Randomness of Permutations
 
