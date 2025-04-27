@@ -34,10 +34,6 @@ The following figure shows the permuted indices (y-axis) for each input (x-axis)
 
 ![gfc_single](https://user-images.githubusercontent.com/10385659/235701085-ec598e00-9822-4101-b434-3426613e2037.png)
 
-The following figure plots 10 instances of GFC-FPE outputs with the same configuration as above, but using a different 256-bit random seed for each instance.
-
-![gfc_10_runs](https://user-images.githubusercontent.com/10385659/235701120-0877141b-df82-428d-97c7-9803612d280c.png)
-
 ## Literature
 
 [[1]](https://eprint.iacr.org/2001/012.pdf) John Black and Phillip Rogaway. 2002. Ciphers with arbitrary finite domains. In _Topics in Cryptology—CT-RSA 2002: The Cryptographers’ Track at the RSA Conference 2002 San Jose, CA, USA, February 18–22, 2002 Proceedings_, Springer, 114–130.
